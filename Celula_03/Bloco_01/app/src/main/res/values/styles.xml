@@ -1,0 +1,43 @@
+<resources>
+
+
+        <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorSecondary">@color/colorSecondary</item>
+            <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+
+        </style>
+
+        <style name="styleHeaderResultado" parent="@style/Widget.MaterialComponents.TextView">
+            <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+            <item name="android:textColor">@color/colorPrimary</item>
+        </style>
+
+        <style name="styleValorResultado" parent="@style/Widget.MaterialComponents.TextView">
+            <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+            <item name="android:textColor">@color/colorSecondary</item>
+        </style>
+
+        <style name="styleTituloSecao" parent="@style/Widget.MaterialComponents.TextView">
+            <item name="android:textAppearance">?attr/textAppearanceHeadline6</item>
+        </style>
+
+        <style name="styleTituloApp" parent="@android:style/Widget.TextView">
+        </style>
+
+        <style name="styleLabelNormal" parent="@android:style/Widget.TextView">
+        </style>
+
+        <style name="styleLabelTituloResultado" parent="@style/styleLabelNormal">
+            <item name="android:textStyle">bold</item>
+        </style>
+
+        <style name="styleEditText" parent="@android:style/Widget.EditText">
+        </style>
+
+        <style name="styleContainedButton" parent="@style/Widget.MaterialComponents.Button">
+        </style>
+
+
+
+</resources>
