@@ -36,9 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         updateAdapter()
         initRecyclerView()
-
     }
-
     private fun updateAdapter() {
         val clienteDao = ClienteDao(this)
         clientesList.clear()
