@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(it)
         })
         initRecyclerView()
-
+        FABfiltro.setOnClickListener {
+            findAdapter(edtSearch.text.toString())
+        }
     }
 
     override fun onRestart() {
@@ -53,11 +55,28 @@ class MainActivity : AppCompatActivity() {
         rvDados.adapter?.notifyDataSetChanged()
     }
 
+
+    private fun findAdapter(name: String) {
+        val clienteDao = ClienteDao(this)
+        clientesList.clear()
+        clientesList = clienteDao.getByName(name)
+        if (clientesList.isEmpty()) {
+            rvDados.setVisibility(View.GONE);
+            txtMsg.setVisibility(View.VISIBLE);
+            txtMsg.setText("Nenhum $name encontrado")
+        }
+        else {
+            rvDados.setVisibility(View.VISIBLE);
+            txtMsg.setVisibility(View.GONE);
+        }
+        rvDados.adapter?.notifyDataSetChanged()
+    }
+
     private fun initRecyclerView() {
         Log.v("LOG", "Inicia RecyclerView")
         val adapter2 = ClienteAdapter(clientesList)
         rvDados.adapter = adapter2
-        val layout = GridLayoutManager(this, 3)
+        val layout = GridLayoutManager(this, 2)
         rvDados.layoutManager = layout
     }
 }

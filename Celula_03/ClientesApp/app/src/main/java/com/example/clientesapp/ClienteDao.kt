@@ -16,7 +16,6 @@ class ClienteDao(context: Context) {
           * Insere dados no banco de dados SQLIte.
      */
 
-
     fun insert(cliente: Cliente): String {
         val db = banco.writableDatabase
         val contentValues = ContentValues()
@@ -32,7 +31,6 @@ class ClienteDao(context: Context) {
         db.close()
         return msg
     }
-
     /**
      * Vamos criar um método para atualizar uma linha com novos valores de campo.
      * */
@@ -63,7 +61,6 @@ class ClienteDao(context: Context) {
      * */
     fun getAll(): ArrayList<Cliente>{
         Log.v("LOG", "GetAll")
-
         val db = banco.writableDatabase
         val  sql = "SELECT *  from "+TABLE_CLIENTES
             val cursor = db.rawQuery(sql ,null)
@@ -75,10 +72,25 @@ class ClienteDao(context: Context) {
         cursor.close()
         db.close()
         Log.v("LOG", "Get ${clientes.size}")
-
         return clientes
-
         }
+
+
+    fun getByName(name:String): ArrayList<Cliente>{
+        Log.v("LOG", "GetAll")
+        val db = banco.writableDatabase
+        val  sql = "SELECT *  from "+TABLE_CLIENTES+" where $CLIENTE_NOME like '%$name%'"
+        val cursor = db.rawQuery(sql ,null)
+        val clientes =ArrayList<Cliente>()
+        while (cursor.moveToNext()){
+            val cliente= clienteFromCursor(cursor)
+            clientes.add(cliente)
+        }
+        cursor.close()
+        db.close()
+        Log.v("LOG", "Get ${clientes.size}")
+        return clientes
+    }
 
     private fun clienteFromCursor(cursor: Cursor): Cliente{
         val id = cursor.getInt(cursor.getColumnIndex(CLIENTE_ID))
