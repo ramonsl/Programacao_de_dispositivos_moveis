@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.v("Ciclo", "O método onResume é acionado quando a Activity se inicia e quando é reiniciada. Ele é acionado sempre que a Activity voltar para o primeiro plano, um bom lugar para fazer coisas como obter Intents e dados extras.")
-
     }
 
 
