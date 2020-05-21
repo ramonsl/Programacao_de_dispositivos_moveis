@@ -19,6 +19,8 @@ class ClienteDao(context: Context) {
     fun insert(cliente: Cliente): String {
         val db = banco.writableDatabase
         val contentValues = ContentValues()
+       // val sql= "Insert into table...."
+       // db.execSQL(sql)
         contentValues.put(CLIENTE_NOME, cliente.nome)
         contentValues.put(CLIENTE_FONE, cliente.fone)
         contentValues.put(CLIENTE_IDADE, cliente.idade)
@@ -42,6 +44,7 @@ class ClienteDao(context: Context) {
         contentValues.put(CLIENTE_NOME, cliente.nome)
         contentValues.put(CLIENTE_FONE, cliente.fone)
         contentValues.put(CLIENTE_IDADE, cliente.idade)
+        //db.update()
         db.insertWithOnConflict(TABLE_CLIENTES,null,contentValues,SQLiteDatabase.CONFLICT_REPLACE)
         db.close()
 

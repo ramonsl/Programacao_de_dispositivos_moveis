@@ -30,9 +30,9 @@ class UpdateActivity : AppCompatActivity() {
         }
 
         FABSave.setOnClickListener {
-            var cliente = Cliente(cliente.id,edtNome.text.toString(),edtFone.text.toString(),(edtIdade.text.toString().toInt()))
+            var clienteUP = Cliente(cliente.id,edtNome.text.toString(),edtFone.text.toString(),(edtIdade.text.toString().toInt()))
             var clienteDao = ClienteDao(this)
-            clienteDao.update(cliente)
+            clienteDao.update(clienteUP)
             onBackPressed()
         }
 

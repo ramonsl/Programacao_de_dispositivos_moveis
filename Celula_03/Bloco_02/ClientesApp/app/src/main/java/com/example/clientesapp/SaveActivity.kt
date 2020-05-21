@@ -22,7 +22,7 @@ class SaveActivity : AppCompatActivity() {
             var cliente = Cliente(null,edtNome.text.toString(),edtFone.text.toString(),(edtIdade.text.toString().toInt()))
             var clienteDao = ClienteDao(this)
             clienteDao.insert(cliente)
-            clienteDao.getAll()
+          //  clienteDao.getAll()
             onBackPressed()
         })
     }
