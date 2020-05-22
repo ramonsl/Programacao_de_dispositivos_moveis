@@ -1,5 +1,6 @@
 package com.example.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -21,7 +22,16 @@ class MainActivity : AppCompatActivity() {
 
         btnCalc.setOnClickListener(View.OnClickListener {
 
-            validarCamposBasicos()
+           if( validarCamposBasicos()){
+               val name= editNome.text.toString()
+               val peso= editPeso.text.toString().toFloat()
+               val altura= editAltura.text.toString().toFloat()
+               val imc = IMC(name,peso,altura)
+               val intent = Intent(this,ResultadoActivity::class.java)
+               intent.putExtra("value", imc)
+               startActivity(intent)
+           }
+
 
         })
         editNome.addTextChangedListener(clearErrorMessage(layoutEditNome))
@@ -38,17 +48,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun exibirMensagemErroNome(){
-        val mensagem = formatarMensagem("Campooooooo")
+        val mensagem = formatarMensagem("Campo")
         exibirMensagemErro(editNome, layoutEditNome, mensagem)
     }
 
     fun exibirMensagemErroPeso(){
-        val mensagem = formatarMensagem("Campooooooo")
+        val mensagem = formatarMensagem("Campo")
         exibirMensagemErro(editPeso, layoutEditPeso, mensagem)
     }
 
     fun exibirMensagemErroAltura(){
-        val mensagem = formatarMensagem("Campooooooo")
+        val mensagem = formatarMensagem("Campo")
         exibirMensagemErro(editAltura, layoutEditAltura, mensagem)
     }
 
