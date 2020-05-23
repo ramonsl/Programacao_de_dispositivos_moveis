@@ -166,7 +166,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/imc/MainActivity.kt</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

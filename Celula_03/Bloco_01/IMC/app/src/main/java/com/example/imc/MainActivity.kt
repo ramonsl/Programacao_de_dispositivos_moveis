@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
 import android.widget.EditText
+import android.widget.Toast
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.MessageFormat
@@ -32,13 +33,17 @@ class MainActivity : AppCompatActivity() {
                startActivity(intent)
            }
 
-
         })
         editNome.addTextChangedListener(clearErrorMessage(layoutEditNome))
         editAltura.addTextChangedListener(clearErrorMessage(layoutEditAltura))
         editPeso.addTextChangedListener(clearErrorMessage(layoutEditPeso))
-    }
 
+        btnCalc.setOnLongClickListener(){
+            Toast.makeText(this,"Clique longo no botão",Toast.LENGTH_LONG).show()
+            true
+        }
+
+    }
 
 
     private fun exibirMensagemErro(editText: EditText, textViewMessage: TextInputLayout, mensagem: String ) {
