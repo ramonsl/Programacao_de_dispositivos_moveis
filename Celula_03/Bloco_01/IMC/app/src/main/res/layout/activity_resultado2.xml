@@ -68,7 +68,18 @@
                     android:textColor="?android:attr/textColorPrimary" />
 
                 <TextView
-                    android:id="@+id/textViewResultadoDensidadeCorporal"
+                android:id="@+id/textViewResultadoDensidadeCorporal"
+                style="@style/styleValorResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:focusable="true"
+                android:text=""
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary" />
+
+                <TextView
+                    android:id="@+id/textViewPeso"
                     style="@style/styleValorResultado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,7 +89,16 @@
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
-
+                <TextView
+                    android:id="@+id/textViewResultadoDensidadeCorporal"
+                    style="@style/styleValorResultado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:focusable="true"
+                    android:text=""
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary" />
 
 
 

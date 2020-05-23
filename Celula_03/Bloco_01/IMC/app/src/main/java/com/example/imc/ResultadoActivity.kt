@@ -16,5 +16,6 @@ class ResultadoActivity : AppCompatActivity() {
         textViewHeaderDensidadeCorporal.text = imc.calcular()
         textViewResultadoDensidadeCorporal.text = imc.imc.toString()
 
+
     }
 }

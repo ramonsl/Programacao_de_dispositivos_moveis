@@ -31,7 +31,7 @@ class IMC(var nome: String?, var peso: Float, var altura: Float, var imc: Float)
                 else -> "Obsedidade Morbida."
             }
 
-        imc=calc
+        imc = calc
         return msg
     }
 
