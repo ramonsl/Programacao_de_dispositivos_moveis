@@ -70,9 +70,10 @@ class MainActivity : AppCompatActivity() {
     private fun validarCamposBasicos(): Boolean {
         Log.e("ERRO", editNome.toString()+"dsbhfkjsdhf")
         clearErrorMessage(layoutEditNome)
-        if (isEmpty(editNome.text.toString())) {
-            exibirMensagemErroNome()
-            return false
+        val tam =editNome.text.toString().length
+        if (isEmpty(editNome.text.toString()) || tam < 3) {
+                exibirMensagemErroNome()
+                return false
         }
         clearErrorMessage(layoutEditPeso)
 
