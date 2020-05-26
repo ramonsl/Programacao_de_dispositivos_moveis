@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,21 +17,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         updateAdapter()
+        initRecyclerView()
         FabAdd.setOnClickListener(View.OnClickListener {
             val it = Intent(this, SaveActivity::class.java)
             startActivity(it)
         })
-        initRecyclerView()
+
         FABfiltro.setOnClickListener {
             findAdapter(edtSearch.text.toString())
         }
     }
 
-    override fun onRestart() {
-        super.onRestart()
-        updateAdapter()
-        initRecyclerView()
-    }
 
     override fun onResume() {
         super.onResume()
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateAdapter() {
         val clienteDao = ClienteDao(this)
-        clientesList.clear()
+        clientesList.clear() //todo
         clientesList = clienteDao.getAll()
         if (clientesList.isEmpty()) {
             rvDados.setVisibility(View.GONE);
@@ -51,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             rvDados.setVisibility(View.VISIBLE);
             txtMsg.setVisibility(View.GONE);
         }
-        rvDados.adapter?.notifyDataSetChanged()
+       rvDados.adapter?.notifyDataSetChanged()
     }
 
 
@@ -76,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         val adapter2 = ClienteAdapter(clientesList)
         rvDados.adapter = adapter2
         val layout = GridLayoutManager(this, 2)
+       // val layout = LinearLayoutManager(this)
         rvDados.layoutManager = layout
     }
 }
