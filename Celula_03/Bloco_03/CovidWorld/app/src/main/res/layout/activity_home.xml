@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.HomeActivity"
+    android:background="@color/backgroundColor">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondaryDarkColor"
+        android:elevation="4dp"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/primaryTextColor"
+        app:titleMarginStart="30dp"
+        tools:ignore="MissingConstraints">
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/escolha_uma_op_o"
+        android:textColor="@color/secondaryDarkColor"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+    <Button
+        android:contentDescription="@string/bot_o_para_acessar_a_lista_com_todos_estados_brasileiros"
+        android:id="@+id/btnAllStates"
+        android:layout_width="355dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="180dp"
+        android:background="@color/secondaryColor"
+        android:text="@string/todos_estados"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+  <EditText
+        android:contentDescription="@string/campo_para_digitar_o_uf_de_algum_estado_brasileiro"
+        android:id="@+id/uf"
+        android:layout_width="276dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="@string/digite_o_uf_de_algum_estado"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:contentDescription="@string/bot_o_para_pesquisar"
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.005"
+        app:srcCompat="@drawable/ic_search_black_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">CovidWorld</string>
+    <string name="escolha_uma_op_o">Escolha Uma Opção</string>
+    <string name="todos_estados">Todos Estados</string>
+    <string name="todos_os_pa_ses">Todos os Países</string>
+    <string name="casos">Casos</string>
+    <string name="mortes">Mortes</string>
+    <string name="suspeitos">Suspeitos</string>
+    <string name="descartados">Descartados</string>
+    <string name="confirmados">Confirmados</string>
+    <string name="curados">Curados</string>
+    <string name="digite_o_uf_de_algum_estado">Digite o UF de algum estado</string>
+    <string name="dia_do_boletim">Dia do boletim</string>
+    <string name="m_s_do_boletim">mês do boletim</string>
+    <string name="hora_do_boletim">hora do boletim</string>
+    <string name="nome_do_pa_s">nome do país</string>
+    <string name="n_mero_de_casos">número de casos</string>
+    <string name="n_mero_de_mortes">número de mortes</string>
+    <string name="n_mero_de_confirmados">número de confirmados</string>
+    <string name="n_mero_de_curados">número de curados</string>
+    <string name="bot_o_para_acessar_a_lista_com_todos_estados_brasileiros">Botão para acessar a lista com todos estados brasileiros</string>
+    <string name="bot_o_para_acessar_a_lista_de_todos_os_pa_ses">Botão para acessar a lista de todos os países</string>
+    <string name="campo_para_digitar_o_uf_de_algum_estado_brasileiro">Campo para digitar o uf de algum estado brasileiro</string>
+    <string name="bot_o_para_pesquisar">Botão para pesquisar</string>
+    <string name="bot_o_para_acessar_a_pag_na_inicial">Botão para acessar a pagína inicial</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="nome_do_estado">Nome do estado</string>
+    <string name="n_mero_de_suspeitos">Número de suspeitos</string>
+    <string name="n_mero_de_descartados">Número de descartados</string>
+    <string name="ano_do_boletim">Ano do boletim</string>
+</resources>
