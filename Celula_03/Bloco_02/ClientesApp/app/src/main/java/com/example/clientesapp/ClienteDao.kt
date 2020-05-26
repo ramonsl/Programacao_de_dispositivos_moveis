@@ -24,6 +24,7 @@ class ClienteDao(context: Context) {
         contentValues.put(CLIENTE_NOME, cliente.nome)
         contentValues.put(CLIENTE_FONE, cliente.fone)
         contentValues.put(CLIENTE_IDADE, cliente.idade)
+
         var resp_id=   db.insert(TABLE_CLIENTES, null, contentValues)
          val msg = if(resp_id!=-1L){
              "Inserido com sucesso"
@@ -45,6 +46,7 @@ class ClienteDao(context: Context) {
         contentValues.put(CLIENTE_FONE, cliente.fone)
         contentValues.put(CLIENTE_IDADE, cliente.idade)
         //db.update()
+
         db.insertWithOnConflict(TABLE_CLIENTES,null,contentValues,SQLiteDatabase.CONFLICT_REPLACE)
         db.close()
 
