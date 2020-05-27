@@ -16,18 +16,18 @@ import java.util.concurrent.TimeUnit
 
 object HttpUf {
 
-    val url ="https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/"
+    val url = "https://covid19-brazil-api.now.sh/api/report/v1/brazil/uf/"
 
 
-    fun hasConnection(ctx: Context): Boolean{
+    fun hasConnection(ctx: Context): Boolean {
         val cm = ctx.getSystemService(Context.CONNECTIVITY_SERVICE)
                 as ConnectivityManager
-        val info =  cm.activeNetworkInfo
+        val info = cm.activeNetworkInfo
         return info != null && info.isConnected
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun loadState(uf:String): States? {
+    fun loadState(uf: String): States? {
 
         val state = OkHttpClient.Builder()
             .readTimeout(5, TimeUnit.SECONDS)
@@ -35,7 +35,7 @@ object HttpUf {
             .build()
 
         val request = Request.Builder()
-            .url(url+uf)
+            .url(url + uf)
             .build()
 
         val response = state.newCall(request).execute()
@@ -49,7 +49,7 @@ object HttpUf {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun readState(json: JSONObject) : States? {
+    fun readState(json: JSONObject): States? {
         try {
 
             val dia = formatarData(json.getString("datetime").substring(0, 10))

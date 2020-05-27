@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.ramonsl.CoronaExemplo.activitys.searchState" />
+        <activity android:name="com.ramonsl.CoronaExemplo.activitys.SearchStateActivity" />
         <activity android:name="com.ramonsl.CoronaExemplo.StateInformationsActivity" />
         <activity android:name="com.ramonsl.CoronaExemplo.AllstatesActivity" />
         <activity android:name="com.ramonsl.CoronaExemplo.activitys.HomeActivity" />

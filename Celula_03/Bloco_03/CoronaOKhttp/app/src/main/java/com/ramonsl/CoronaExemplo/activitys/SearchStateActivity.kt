@@ -13,7 +13,7 @@ import com.ramonsl.CoronaExemplo.States
 import com.ramonsl.CoronaExemplo.ws.HttpUf
 import kotlinx.android.synthetic.main.activity_search_state.*
 
-class searchState : AppCompatActivity() {
+class SearchStateActivity : AppCompatActivity() {
 
     var uf: String = "rs"
     private var asyncTask : StatesTask? = null
@@ -26,7 +26,7 @@ class searchState : AppCompatActivity() {
 
         appBarSearch.setNavigationOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                val intent = Intent(this@searchState, HomeActivity::class.java)
+                val intent = Intent(this@SearchStateActivity, HomeActivity::class.java)
                 startActivity(intent)
             }
         })

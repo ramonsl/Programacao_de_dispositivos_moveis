@@ -88,6 +88,14 @@ class AllstatesActivity : AppCompatActivity() {
             return HttpAllStates.loadStates()
         }
 
+
+
+        override fun onPostExecute(result: List<States?>?) {
+            super.onPostExecute(result)
+            showProgress(false)
+            update(result as List<States>?)
+        }
+
         private fun update(result: List<States>?){
             if(result != null){
                 listStates.clear()
@@ -97,12 +105,6 @@ class AllstatesActivity : AppCompatActivity() {
             }
             adapter.notifyDataSetChanged()
             asyncTask = null
-        }
-
-        override fun onPostExecute(result: List<States?>?) {
-            super.onPostExecute(result)
-            showProgress(false)
-            update(result as List<States>?)
         }
     }
 

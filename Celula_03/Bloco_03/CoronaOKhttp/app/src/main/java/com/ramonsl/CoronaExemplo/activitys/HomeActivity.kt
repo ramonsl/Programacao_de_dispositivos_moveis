@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         btnSearch.setOnClickListener(View.OnClickListener {
             if(uf.text.toString().isNotEmpty()) {
-                val intent = Intent(this, searchState::class.java)
+                val intent = Intent(this, SearchStateActivity::class.java)
                 intent.putExtra("uf", uf.text.toString().toLowerCase())
                 this.startActivity(intent)
             }else{
