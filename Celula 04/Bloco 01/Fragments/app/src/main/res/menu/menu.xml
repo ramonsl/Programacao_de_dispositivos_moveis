@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_money"
+        android:icon="@drawable/money"
+        android:title="money"/>
+
+    <item
+
+       android:id="@+id/nav_savings"
+        android:icon="@drawable/savings"
+        android:title="Saving"/>
+    <item
+
+
+        android:id="@+id/nav_growth"
+        android:icon="@drawable/growth"
+        android:title="Ativos"/>
+
+</menu>
