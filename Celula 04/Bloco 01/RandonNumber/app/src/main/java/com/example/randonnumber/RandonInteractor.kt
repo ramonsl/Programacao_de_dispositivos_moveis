@@ -18,22 +18,24 @@ class RandonInteractor {
         Log.v("Log","INICIO INTERACTOR "+inicio)
         Log.v("Log","INICIO FIM "+fim)
         var gerar=0
+        if (fim.toInt() < 100) {
         try {
-            if (inicio.toInt() > fim.toInt()){
-                listener.onError("Numero inicial Maior que numero final")
-            }else{
-                gerar=  Random.nextInt(inicio.toInt(),fim.toInt())
-                listener.onSuccess(gerar.toString())
-                Log.v("Log","NUMERO GERADO "+gerar)
+
+                if (inicio.toInt() > fim.toInt()) {
+                    listener.onError("Numero inicial Maior que numero final")
+                } else {
+                    gerar = Random.nextInt(inicio.toInt(), fim.toInt())
+                    listener.onSuccess(gerar.toString())
+                    Log.v("Log", "NUMERO GERADO " + gerar)
+
+                }
+            } catch (e : Exception){
+                Log.v("Log", "ERRO " + e.message)
+
+                listener.onError("Deu um erro cabuloso")
 
             }
-        }catch (e : Exception){
-            Log.v("Log","ERRO "+e.message)
-
-            listener.onError("Deu um erro cabuloso")
-
         }
-
 
     }
 

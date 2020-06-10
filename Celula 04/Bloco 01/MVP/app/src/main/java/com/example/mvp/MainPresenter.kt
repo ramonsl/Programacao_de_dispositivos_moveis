@@ -8,14 +8,10 @@ class MainPresenter( var  mainView: MainView?, val mainInteractor: MainInteracto
     private  fun onSetMensagem() {
         mainView?.showMensagem()
     }
-
     fun  onClearMensagem(){
         mainView?.hiddenMensagem()
     }
-
-
     override fun onValida(v: Boolean) {
-
         if (v ){
             onClearMensagem()
         }else{
