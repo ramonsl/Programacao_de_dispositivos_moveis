@@ -10,6 +10,7 @@ import okhttp3.Request
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
+import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
@@ -23,7 +24,7 @@ object HttpAllStates {
         return info != null && info.isConnected
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+   // @RequiresApi(Build.VERSION_CODES.O)
     fun loadStates(): List<States>? {
         val state = OkHttpClient.Builder()
             .readTimeout(5, TimeUnit.SECONDS)
@@ -41,7 +42,7 @@ object HttpAllStates {
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+    //@RequiresApi(Build.VERSION_CODES.O)
     fun readState(json: JSONArray): List<States>? {
         val estados = arrayListOf<States>()
         try {
@@ -68,13 +69,21 @@ object HttpAllStates {
 
         return estados
     }
-    @RequiresApi(Build.VERSION_CODES.O)
+
+
+  /*  @RequiresApi(Build.VERSION_CODES.O)
     fun formatarData(data: String): String {
         val diaString = data
         var formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
         var date = LocalDate.parse(diaString)
         var formattedDate = date.format(formatter)
         return formattedDate
-    }
+    }*/
 
+    fun formatarData(data: String):String {
+        val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
+        val output: String = formatter.format(parser.parse("2018-12-14T09:55:00"))
+        return output
+    }
 }
