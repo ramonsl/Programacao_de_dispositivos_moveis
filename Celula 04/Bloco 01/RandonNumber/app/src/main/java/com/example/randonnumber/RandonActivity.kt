@@ -10,8 +10,6 @@ class RandonActivity : AppCompatActivity(), RandonView {
 
     private val presenter = RandonPresenter(this, RandonInteractor())
 
-    //private var number=""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
