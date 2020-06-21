@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import java.util.*
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Movie : Parcelable {
+class Movie() : Parcelable {
     var id: String? = null
     var vote_average: String? = null
     var title: String? = null
@@ -16,6 +16,17 @@ class Movie : Parcelable {
     var overview: String? = null
     var release_date: String? = null
     var poster: Bitmap? = null
+
+    constructor(parcel: Parcel) : this() {
+        id = parcel.readString()
+        vote_average = parcel.readString()
+        title = parcel.readString()
+        popularity = parcel.readString()
+        poster_path = parcel.readString()
+        overview = parcel.readString()
+        release_date = parcel.readString()
+        poster = parcel.readParcelable(Bitmap::class.java.classLoader)
+    }
 
     override fun toString(): String {
         return "Movie{" +
@@ -42,47 +53,29 @@ class Movie : Parcelable {
                 poster == movie.poster
     }
 
-    override fun hashCode(): Int {
-        return Objects.hash(id, vote_average, title, popularity, poster_path, overview, poster)
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
+        parcel.writeString(vote_average)
+        parcel.writeString(title)
+        parcel.writeString(popularity)
+        parcel.writeString(poster_path)
+        parcel.writeString(overview)
+        parcel.writeString(release_date)
+        parcel.writeParcelable(poster, flags)
     }
-
-    constructor() {}
 
     override fun describeContents(): Int {
         return 0
     }
 
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        dest.writeString(id)
-        dest.writeString(vote_average)
-        dest.writeString(title)
-        dest.writeString(popularity)
-        dest.writeString(poster_path)
-        dest.writeString(overview)
-        dest.writeString(release_date)
-        dest.writeParcelable(poster, flags)
-    }
+    companion object CREATOR : Parcelable.Creator<Movie> {
+        override fun createFromParcel(parcel: Parcel): Movie {
+            return Movie(parcel)
+        }
 
-    protected constructor(`in`: Parcel) {
-        id = `in`.readString()
-        vote_average = `in`.readString()
-        title = `in`.readString()
-        popularity = `in`.readString()
-        poster_path = `in`.readString()
-        overview = `in`.readString()
-        release_date = `in`.readString()
-        poster = `in`.readParcelable(Bitmap::class.java.classLoader)
-    }
-
-    companion object {
-        val CREATOR: Parcelable.Creator<Movie?> = object : Parcelable.Creator<Movie?> {
-            override fun createFromParcel(source: Parcel): Movie? {
-                return Movie(source)
-            }
-
-            override fun newArray(size: Int): Array<Movie?> {
-                return arrayOfNulls(size)
-            }
+        override fun newArray(size: Int): Array<Movie?> {
+            return arrayOfNulls(size)
         }
     }
+
 }

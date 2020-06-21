@@ -161,7 +161,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        //private static final String API_KEY = "d15439ba9445688264047fbb91fce4c4";
         private const val API_KEY = BuildConfig.API_KEY
     }
 }

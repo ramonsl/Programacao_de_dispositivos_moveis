@@ -5,8 +5,8 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 
 class RetrofitConfig {
     private val retrofit: Retrofit
-    private val BASE_URL = "https://api.themoviedb.org/3/movie/"
-    private val BASE_IMG = "https://image.tmdb.org/t/p/w500/"
+    val BASE_URL = "https://api.themoviedb.org/3/movie/"
+     val BASE_IMG = "https://image.tmdb.org/t/p/w500/"
     fun get(): MoviesService {
         return retrofit.create(MoviesService::class.java)
     }
