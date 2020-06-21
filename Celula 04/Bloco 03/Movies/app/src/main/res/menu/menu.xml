@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_top"
+        android:icon="@drawable/ic_action_rating"
+        android:orderInCategory="1"
+        android:iconTint="@color/primaryTextColor"
+        android:title="@string/action_top"
+        android:tooltipText="@string/action_top_tool"
+        android:contentDescription="@string/action_top"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_pop"
+        android:orderInCategory="1"
+        android:tooltipText="@string/action_pop_tool"
+
+        android:contentDescription="@string/action_pop"
+        android:icon="@drawable/ic_action_popular"
+        android:title="@string/action_pop"
+        app:showAsAction="ifRoom"/>
+</menu>

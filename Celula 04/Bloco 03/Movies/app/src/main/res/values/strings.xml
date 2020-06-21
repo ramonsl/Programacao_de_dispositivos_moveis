@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">The Top Movies</string>
+    <string name="error_message">\"Sem internet\"</string>
+    <string name="action_top">Mais Votados</string>
+    <string name="action_pop">Popular</string>
+    <string name="action_calendar">Data do Lançamento</string>
+    <string name="action_rate">Nota atribuida</string>
+    <string name="action_banner">Capa do filme</string>
+    <string name="error_indiponivel">Indiponibilidade de buscar os filmes</string>
+    <string name="error_internet">\"Ative sua conexão de dados ou WIFI</string>
+    <string name="error_request">Erro na requisição</string>
+    <string name="action_top_tool">Filme mais votado</string>
+    <string name="action_pop_tool">Filme mais popular</string>
+</resources>
