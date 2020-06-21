@@ -18,7 +18,7 @@ class RandonInteractor {
         Log.v("Log","INICIO INTERACTOR "+inicio)
         Log.v("Log","INICIO FIM "+fim)
         var gerar=0
-        if (fim.toInt() < 100) {
+
         try {
 
                 if (inicio.toInt() > fim.toInt()) {
@@ -37,6 +37,7 @@ class RandonInteractor {
             }
         }
 
-    }
+
+
 
 }

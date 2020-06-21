@@ -3,10 +3,11 @@ package com.example.randonnumber
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class RandonActivity : AppCompatActivity(), RandonView {
+class RandonActivity : AppCompatActivity(),RandonView {
 
     private val presenter = RandonPresenter(this, RandonInteractor())
 
@@ -20,13 +21,20 @@ class RandonActivity : AppCompatActivity(), RandonView {
         Log.v("Log", "FIM " + edtFim.text.toString())
         presenter.gerarNumero(edtInicio.text.toString(), edtFim.text.toString())
     }
+
     override fun showNumber(msg: String) {
-        txtNumerRandomico.text = msg
+
+
         txtNumerRandomico.visibility = View.VISIBLE
+        txtNumerRandomico.text= msg
     }
+
     override fun showError(msg: String) {
-        txtNumerRandomico.text = msg
-        txtNumerRandomico.visibility = View.VISIBLE
+        txtNumerRandomico.visibility = View.GONE
+        Toast.makeText(this,msg,Toast.LENGTH_LONG).show()
 
     }
+
+
+
 }
