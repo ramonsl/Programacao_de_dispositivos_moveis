@@ -16,33 +16,49 @@ import java.text.MessageFormat
 
 class MainActivity : AppCompatActivity() {
 
+    // Declaração de variáveis para acessar os componentes
+    private lateinit var editNome: EditText
+    private lateinit var editPeso: EditText
+    private lateinit var editAltura: EditText
+    private lateinit var btnCalc: Button
+    private lateinit var layoutEditNome: TextInputLayout
+    private lateinit var layoutEditPeso: TextInputLayout
+    private lateinit var layoutEditAltura: TextInputLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Inicialização das variáveis com findViewById
+        editNome = findViewById(R.id.editNome)
+        editPeso = findViewById(R.id.editPeso)
+        editAltura = findViewById(R.id.editAltura)
+        btnCalc = findViewById(R.id.btnCalc)
+        layoutEditNome = findViewById(R.id.layoutEditNome)
+        layoutEditPeso = findViewById(R.id.layoutEditPeso)
+        layoutEditAltura = findViewById(R.id.layoutEditAltura)
 
-        btnCalc.setOnClickListener(View.OnClickListener {
-
-           if( validarCamposBasicos()){
-               val name= editNome.text.toString()
-               val peso= editPeso.text.toString().toFloat()
-               val altura= editAltura.text.toString().toFloat()
-               val imc = IMC(name,peso,altura)
-               val intent = Intent(this,ResultadoActivity::class.java)
-               intent.putExtra("value", imc)
-               startActivity(intent)
-           }
-
-        })
-        editNome.addTextChangedListener(clearErrorMessage(layoutEditNome))
-        editAltura.addTextChangedListener(clearErrorMessage(layoutEditAltura))
-        editPeso.addTextChangedListener(clearErrorMessage(layoutEditPeso))
-
-        btnCalc.setOnLongClickListener(){
-            Toast.makeText(this,"Clique longo no botão",Toast.LENGTH_LONG).show()
-            true
+        btnCalc.setOnClickListener {
+            if (validarCamposBasicos()) {
+                val name = editNome.text.toString()
+                val peso = editPeso.text.toString().toFloat()
+                val altura = editAltura.text.toString().toFloat()
+                val imc = IMC(name, peso, altura)
+                val intent = Intent(this, ResultadoActivity::class.java)
+                intent.putExtra("value", imc)
+                startActivity(intent)
+            }
         }
 
+        // Adicionando TextWatchers
+        editNome.addTextChangedListener(clearErrorMessage(layoutEditNome))
+        editPeso.addTextChangedListener(clearErrorMessage(layoutEditPeso))
+        editAltura.addTextChangedListener(clearErrorMessage(layoutEditAltura))
+
+        btnCalc.setOnLongClickListener {
+            Toast.makeText(this, "Clique longo no botão", Toast.LENGTH_LONG).show()
+            true
+        }
     }
 
 
